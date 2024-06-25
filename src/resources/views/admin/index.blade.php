@@ -15,7 +15,7 @@
     </div>
     <div class="inner admin__inner">
         <div class="register">
-            <h2 class="section-title">店舗管理者登録</h2>
+            <h2 class="section-title">店舗代表者登録</h2>
             <div class="register__block">
                 <div class="register__block-body">
                     <form action="/owner/register" class="form" method="post" novalidate>
@@ -73,9 +73,9 @@
             </div>
         </div>
         <div class="owner">
-            <h2 class="section-title">店舗管理者一覧</h2>
+            <h2 class="section-title">店舗代表者一覧</h2>
             @if($owners->isEmpty())
-            <p class="owner__not-found">店舗管理者が登録されていません</p>
+            <p class="owner__not-found">店舗代表者が登録されていません</p>
             @else
             <table class="owner-table">
                 <tr class="owner-table__row">

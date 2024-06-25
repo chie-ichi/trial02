@@ -48,7 +48,7 @@ class RestaurantController extends Controller
             $path = $image->store('public/img/upload');
             $public_path = str_replace('public/', '/storage/', $path);
 
-            //店舗管理者情報を登録
+            //店舗代表者情報を登録
             Restaurant::create([
                 'owner_id' => $request['owner_id'],
                 'name' => $request['name'],

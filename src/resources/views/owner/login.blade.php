@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-<title>店舗管理者用ログイン画面 | Rese</title>
+<title>店舗代表者用ログイン画面 | Rese</title>
 @endsection
 
 @section('css')
@@ -12,7 +12,7 @@
 <div class="login">
     <div class="inner login__inner">
         <div class="login__block">
-            <h1 class="login__block-ttl">店舗管理者用ログイン</h1>
+            <h1 class="login__block-ttl">店舗代表者用ログイン</h1>
             <div class="login__block-body">
                 <form action="/owner/login" class="form" method="post" novalidate>
                     @csrf
