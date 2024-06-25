@@ -8,7 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+use App\Models\Favorite;
+use App\Models\Reservation;
+use App\Models\Review;
+
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -41,4 +45,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    public function favorite()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function reservation()
+    {
+        return $this->hasMany(Reservation::class);
+    }
+
+    public function review()
+    {
+        return $this->hasMany(Review::class);
+    }
+
 }
