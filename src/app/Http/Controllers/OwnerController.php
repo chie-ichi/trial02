@@ -33,16 +33,16 @@ class OwnerController extends Controller
     public function postRegister(RegisterRequest $request)
     {
         try {
-            //店舗管理者情報を登録
+            //店舗代表者情報を登録
             Owner::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
-            return redirect('/admin')->with('flashSuccess', '店舗管理者登録が完了しました');
+            return redirect('/admin')->with('flashSuccess', '店舗代表者登録が完了しました');
         } catch (\Throwable $th) {
             $errorMessage = $th->getMessage();
-            return redirect('/admin')->with('flashError', '店舗管理者登録時にエラーが発生しました: ' . $errorMessage);
+            return redirect('/admin')->with('flashError', '店舗代表者登録時にエラーが発生しました: ' . $errorMessage);
         }
     }
 
