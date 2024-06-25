@@ -16,7 +16,7 @@
     <div class="inner owner__inner">
         <p class="owner__lead">こんにちは、{{ $owner->name }}さん</p>
         <div class="register">
-            <h2 class="section-title">店舗情報登録</h2>
+            <h2 class="section-title">飲食店情報登録</h2>
             <div class="register__block">
                 <div class="register__block-body">
                     <form action="/add" class="form" method="post" novalidate enctype="multipart/form-data">
@@ -115,12 +115,12 @@
             </div>
         </div>
         <div class="restaurant">
-            <h2 class="section-title">店舗情報一覧</h2>
+            <h2 class="section-title">飲食店情報一覧</h2>
             @php
                 $restaurants = $owner->getRestaurants();
             @endphp
             @if($restaurants->isEmpty())
-            <p>店舗情報が登録されていません</p>
+            <p>飲食店情報が登録されていません</p>
             @else
             @foreach($restaurants as $restaurant)
             <h3 class="restaurant-name">{{ $restaurant->name }}</h3>

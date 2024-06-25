@@ -57,10 +57,10 @@ class RestaurantController extends Controller
                 'photo' => $public_path,
                 'description' => $request['description'],
             ]);
-            return redirect('/owner')->with('flashSuccess', '店舗情報の登録が完了しました');
+            return redirect('/owner')->with('flashSuccess', '飲食店情報の登録が完了しました');
         } catch (\Throwable $th) {
             $errorMessage = $th->getMessage();
-            return redirect('/owner')->with('flashError', '店舗情報登録時にエラーが発生しました: ' . $errorMessage);
+            return redirect('/owner')->with('flashError', '飲食店情報登録時にエラーが発生しました: ' . $errorMessage);
         }
     }
 
@@ -94,10 +94,10 @@ class RestaurantController extends Controller
 
             Restaurant::find($request->id)->update($data);
 
-            return redirect('/owner')->with('flashSuccess', '店舗情報の更新が完了しました');
+            return redirect('/owner')->with('flashSuccess', '飲食店情報の更新が完了しました');
         } catch (\Throwable $th) {
             $errorMessage = $th->getMessage();
-            return redirect('/owner')->with('flashError', '店舗情報更新時にエラーが発生しました: ' . $errorMessage);
+            return redirect('/owner')->with('flashError', '飲食店情報更新時にエラーが発生しました: ' . $errorMessage);
         }
     }
 }
