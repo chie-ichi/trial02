@@ -1,0 +1,72 @@
+.confirm{
+    height: calc(100vh - 50px);
+    min-height: 500px;
+}
+.confirm__inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card{
+    width: min(600px, 100%);
+    padding: 30px 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 6px 10px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+@media screen and (max-width: 768px){
+    .card{
+        padding: 20px 15px;
+    }
+}
+.card-header{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+.card-body{
+    font-size: 16px;
+    font-weight: normal;
+}
+.card-link{
+    color: var(--accent-color);
+    text-decoration: underline;
+    font-size: 16px;
+    transition: .3s all ease;
+    text-align: left;
+}
+.card-link:hover{
+    opacity: 0.7;
+}
+.card-button-wrap{
+    margin: 10px 0 20px;
+}
+.card-button{
+    background: var(--accent-color);
+    color: #fff;
+    appearance: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--accent-color);
+    font-size: 16px;
+    transition: .3s all ease;
+    text-align: left;
+    padding: 0.2em 1em;
+}
+.card-button:hover{
+    opacity: 0.7;
+}
+.card-message__success{
+    background: #D1E7DD;
+    color: #2E8540;
+    padding: 0.2em 1em;
+    margin-bottom: 1em;
+}
+.invalid-feedback{
+    color: red;
+    font-size: 13px;
+}
+}
