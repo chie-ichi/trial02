@@ -74,9 +74,3 @@ Route::middleware(['auth.owner'])->group(function () {
     Route::get('/confirm-visit/{id}', [ReservationController::class, 'confirmVisit']);
 });
 
-
-/*
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-*/
