@@ -83,7 +83,7 @@ http://localhost
 | カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------|------|------|------|------|------|
 | id | unsigned bigint | ◯ | ◯ | ◯ |  |
-| name	varchar(255) |  |  | ◯ |  |
+| name | varchar(255) |  |  | ◯ |  |
 | created_at | timestamp |  |  |  |  |
 | updated_at | timestamp |  |  |  |  |
 
@@ -91,7 +91,7 @@ http://localhost
 | カラム名 | 型 | PRIMARY KEY | UNIQUE KEY | NOT NULL | FOREIGN KEY |
 |------|------|------|------|------|------|
 | id | unsigned bigint | ◯ | ◯ | ◯ |  |
-| name	varchar(255) |  |  | ◯ |  |
+| name | varchar(255) |  |  | ◯ |  |
 | created_at | timestamp |  |  |  |  |
 | updated_at | timestamp |  |  |  |  |
 
@@ -189,7 +189,7 @@ MAIL_FROM_NAME="${APP_NAME}"
 テストアカウント情報は以下の通り。
 ※以下のユーザーは上記のLaravel環境構築作業の手順6を行うと生成される。
 
-###ユーザーアカウント
+### ユーザーアカウント
 | 名前 | Eメール | パスワード |
 |-----------|-----------|-----------|
 | 田中一郎 | test1@test.jp | password1 |
