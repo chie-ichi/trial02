@@ -169,8 +169,8 @@ http://localhost
 
 ＊ Stripeによる支払い機能を動作させるため、手順3で.envファイルにStripeの公開可能キー・シークレットキーを以下の形式で記述してください。
 ```
-STRIPE_KEY=*公開可能キー*
-STRIPE_SECRET=*シークレットキー*
+STRIPE_KEY=公開可能キー
+STRIPE_SECRET=シークレットキー
 ```
 
 ＊ Mailtrapを使用してメール送信の動作確認を行うため、手順3で.envファイルにメールの設定を以下のように記述してください。
@@ -178,8 +178,8 @@ STRIPE_SECRET=*シークレットキー*
 MAIL_MAILER=smtp
 MAIL_HOST=sandbox.smtp.mailtrap.io
 MAIL_PORT=2525
-MAIL_USERNAME=*ユーザー名*
-MAIL_PASSWORD=*パスワード*
+MAIL_USERNAME=ユーザー名
+MAIL_PASSWORD=パスワード
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=example@example.com
 MAIL_FROM_NAME="${APP_NAME}"
@@ -203,14 +203,14 @@ MAIL_FROM_NAME="${APP_NAME}"
 | 田中九郎 | test9@test.jp | password9 |
 | 田中十郎 | test10@test.jp | password10 |
 
-###管理者アカウント
+### 管理者アカウント
 | 名前 | ユーザーID | パスワード |
 |-----------|-----------|-----------|
 | 管理者1 | admin1 | password1 |
 | 管理者2 | admin2 | password2 |
 | 管理者3 | admin3 | password3 |
 
-###店舗代表者アカウント
+### 店舗代表者アカウント
 | 名前 | Eメール | パスワード |
 |-----------|-----------|-----------|
 | 店舗代表者1 | owner1@test.jp | password1 |
@@ -237,10 +237,10 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 ## 申し送り事項
 
-###メール送信を伴う機能について
+### メール送信を伴う機能について
 Mailtrap (https://mailtrap.io/) を使用したテスト送信でのみ動作確認済みです。
 
-###決済機能について
-Stripeのテスト環境およびテストカードを用いて動作確認済みです。
-Stripeのテストカードの情報については以下をご参照ください。
+### 決済機能について
+Stripeのテスト環境およびテストカードを用いて動作確認済みです。  
+Stripeのテストカードの情報については以下をご参照ください。  
 https://docs.stripe.com/testing?locale=ja-JP
