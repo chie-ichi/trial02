@@ -36,9 +36,8 @@ Route::post('/register', [AuthController::class, 'postRegister']);
 Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
 Route::post('/login', [AuthController::class, 'postLogin']);
 
-Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-
 Route::middleware(['verified'])->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::post('/reservation', [ReservationController::class, 'reservation']);
     Route::post('/cancel', [ReservationController::class, 'cancel']);
     Route::post('/edit-reservation', [ReservationController::class, 'edit']);
