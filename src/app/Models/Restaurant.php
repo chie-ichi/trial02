@@ -10,7 +10,6 @@ use App\Models\Category;
 use App\Models\Reservation;
 use App\Models\Favorite;
 use App\Models\Review;
-use App\Models\User;
 use App\Models\Owner;
 
 class Restaurant extends Model
@@ -33,10 +32,6 @@ class Restaurant extends Model
 
     public function area(){
         return $this->belongsTo(Area::class);
-    }
-
-    public function user(){
-        return $this->belongsTo(User::class);
     }
 
     public function reservation(){
