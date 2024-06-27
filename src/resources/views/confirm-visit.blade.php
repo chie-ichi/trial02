@@ -36,6 +36,14 @@
                     <th class="visit-table__heading">人数</th>
                     <td class="visit-table__data">{{ $reservation->number }}</td>
                 </tr>
+                <tr class="visit-table__row">
+                    <th class="visit-table__heading">クーポン</th>
+                    @if($reservation->paid_at)
+                    <td class="visit-table__data">購入済</td>
+                    @else
+                    <td class="visit-table__data">未購入</td>
+                    @endif
+                </tr>
             </table>
             @else
             <p class="visit-block__lead">予約ID{{ $reservation->id }}: 担当外店舗のご予約のため、内容確認できません</p>
