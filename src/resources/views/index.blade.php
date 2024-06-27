@@ -35,6 +35,9 @@
                 </div>
             </form>
         </div>
+        @if($restaurants->isEmpty())
+            <p class="restaurant__notfound">検索条件に当てはまる店舗が見つかりません。</p>
+        @else
         <ul class="restaurant-list">
             @foreach($restaurants as $restaurant)
             <li class="restaurant-list__item">
@@ -74,6 +77,7 @@
             </li>
             @endforeach
         </ul>
+        @endif
     </div>
 </div>
 @endsection

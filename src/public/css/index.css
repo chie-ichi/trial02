@@ -6,6 +6,15 @@
         padding: 85px 0 120px;
     }
 }
+.restaurant__notfound{
+    font-size: 16px;
+    font-weight: normal;
+}
+@media screen and (max-width: 768px){
+    .restaurant__notfound{
+        font-size: 14px;
+    }
+}
 .restaurant-list{
     display: flex;
     flex-wrap: wrap;
