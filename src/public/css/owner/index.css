@@ -227,15 +227,36 @@
     background: #fff;
     border-collapse: collapse;
 }
+@media screen and (max-width: 768px){
+    .reservation-table{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px){
+    .reservation-table{
+        font-size: 12px;
+    }
+}
 .reservation-table__heading,
 .reservation-table__data{
     border: 1px solid #eee;
     padding: 0.1em 0.5em 0.2em;
+    text-align: center;
+}
+@media screen and (max-width: 768px){
+    .reservation-table__heading,
+    .reservation-table__data{
+        padding: 0.1em 0.1em 0.2em;
+    }
 }
 .reservation-table__heading{
     background: var(--accent-color);
     color: #fff;
-    text-align: center;
+}
+@media screen and (max-width: 768px){
+    .reservation-table__heading:first-child{
+        width: 8em;
+    }
 }
 .reservation-table__link{
     color: var(--accent-color);
@@ -244,8 +265,17 @@
 .reservation-table__user-wrap{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     width: 100%;
+}
+@media screen and (max-width: 768px){
+.reservation-table__user-wrap{
+    justify-content: center;
+}
+.reservation-table__user-name{
+    width: 100%;
+}
 }
 .message-form__button{
     font-size: 12px;
@@ -253,9 +283,16 @@
     border: 1px solid var(--accent-color);
     color: var(--accent-color);
     border-radius: 5px;
-    padding: 0.1em 1em;
+    padding: 0.3em 1em;
     background: rgba(var(--accent-color-rgb), 0.1);
     transition: .3s all ease;
+}
+@media screen and (max-width: 768px){
+    .message-form__button{
+        font-size: 11px;
+        padding: 0.5em 0.5em;
+        margin-top: 3px;
+    }
 }
 .message-form__button:hover{
     opacity: 0.7;

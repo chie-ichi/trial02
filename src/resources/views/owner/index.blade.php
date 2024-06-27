@@ -227,6 +227,7 @@
                         <th class="reservation-table__heading">日付</th>
                         <th class="reservation-table__heading">時間</th>
                         <th class="reservation-table__heading">人数</th>
+                        <th class="reservation-table__heading">クーポン<br>購入</th>
                         <th class="reservation-table__heading">来店<br>確認</th>
                     </tr>
                     @foreach($reservations as $reservation)
@@ -245,6 +246,11 @@
                         <td class="reservation-table__data">{{ $reservation->time }}</td>
                         <td class="reservation-table__data">{{ $reservation->number }}</td>
                         @if($reservation->visit_confirmation_at)
+                        <td class="reservation-table__data">済</td>
+                        @else
+                        <td class="reservation-table__data">未</td>
+                        @endif
+                        @if($reservation->paid_at)
                         <td class="reservation-table__data">済</td>
                         @else
                         <td class="reservation-table__data">未</td>
