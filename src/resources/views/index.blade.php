@@ -12,7 +12,8 @@
 <div class="restaurant">
     <div class="inner restaurant__inner">
         <div class="search">
-            <form action="/search" class="search-form" method="get">
+            <form action="/" class="search-form" method="post">
+                @csrf
                 <div class="search-form__item">
                     <div class="search-form__item-select-wrap">
                         <select name="area_id" class="search-form__item-select search-form__item-select--area" onchange="submit(this.form)">

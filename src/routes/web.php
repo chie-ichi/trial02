@@ -27,7 +27,7 @@ use App\Http\Controllers\StripeController;
 Auth::routes(['verify' => true]);
 
 Route::get('/', [RestaurantController::class, 'index']);
-Route::get('/search', [RestaurantController::class, 'search']);
+Route::post('/', [RestaurantController::class, 'search']);
 Route::get('/detail/{id}', [RestaurantController::class, 'detail'])->name('detail');
 
 Route::get('/register', [AuthController::class, 'getRegister']);
