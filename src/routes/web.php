@@ -31,7 +31,6 @@ Route::get('/detail/{id}', [RestaurantController::class, 'detail'])->name('detai
 
 Route::get('/register', [UserController::class, 'getRegister']);
 Route::post('/register', [UserController::class, 'postRegister']);
-
 Route::get('/login', [UserController::class, 'getLogin'])->name('login');
 Route::post('/login', [UserController::class, 'postLogin']);
 
@@ -48,7 +47,6 @@ Route::middleware(['verified'])->group(function () {
     Route::post('/add-review', [ReviewController::class, 'addReview']);
     Route::post('/charge', [StripeController::class, 'charge'])->name('stripe.charge');
 });
-
 
 Route::get('/admin/login', [AdministratorController::class, 'getLogin']);
 Route::post('/admin/login', [AdministratorController::class, 'postLogin']);
@@ -71,4 +69,3 @@ Route::middleware(['auth.owner'])->group(function () {
     Route::post('/send-message', [OwnerController::class, 'sendMessage']);
     Route::get('/confirm-visit/{id}', [ReservationController::class, 'confirmVisit']);
 });
-
