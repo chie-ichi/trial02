@@ -7,7 +7,6 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AdministratorController;
 use App\Http\Controllers\OwnerController;
@@ -30,14 +29,14 @@ Route::get('/', [RestaurantController::class, 'index']);
 Route::post('/', [RestaurantController::class, 'search']);
 Route::get('/detail/{id}', [RestaurantController::class, 'detail'])->name('detail');
 
-Route::get('/register', [AuthController::class, 'getRegister']);
-Route::post('/register', [AuthController::class, 'postRegister']);
+Route::get('/register', [UserController::class, 'getRegister']);
+Route::post('/register', [UserController::class, 'postRegister']);
 
-Route::get('/login', [AuthController::class, 'getLogin'])->name('login');
-Route::post('/login', [AuthController::class, 'postLogin']);
+Route::get('/login', [UserController::class, 'getLogin'])->name('login');
+Route::post('/login', [UserController::class, 'postLogin']);
 
 Route::middleware(['verified'])->group(function () {
-    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::post('/reservation', [ReservationController::class, 'reservation']);
     Route::post('/cancel', [ReservationController::class, 'cancel']);
     Route::post('/edit-reservation', [ReservationController::class, 'edit']);
