@@ -201,9 +201,10 @@ MAIL_FROM_NAME="${APP_NAME}"
 test_laravel_dbという名前のデータベースがきちんと作成されていることを確認
 5. `exit`
 を2回実行し、MySQLコンテナへの接続を終了
-6. `cp .env .env.testing`
+6. `cd src`
+7. `cp .env .env.testing`
 を実行して.envをコピーして.env.testingファイルを作成
-7. .env.testingの冒頭部分を編集
+8. .env.testingの冒頭部分を編集
 ```
 APP_ENV=local
 APP_KEY=キー
@@ -213,7 +214,7 @@ APP_KEY=キー
 APP_ENV=test
 APP_KEY=
 ```
-8. .env.testingにデータベースの接続情報をテスト用に編集
+9. .env.testingにデータベースの接続情報をテスト用に編集
 ```
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
@@ -225,11 +226,11 @@ DB_DATABASE=test_laravel_db
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
-9. `docker-compose exec php bash`
-10. `php artisan key:generate --env=testing`
-11. `php artisan config:clear`
-12. `php artisan migrate --env=testing`
-13. `php artisan db:seed --env=testing`
+10. `docker-compose exec php bash`
+11. `php artisan key:generate --env=testing`
+12. `php artisan config:clear`
+13. `php artisan migrate --env=testing`
+14. `php artisan db:seed --env=testing`
 
 ### テストアカウント
 テストアカウント情報は以下の通り。  
