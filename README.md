@@ -172,6 +172,7 @@ http://localhost
 4. `php artisan key:generate`
 5. `php artisan migrate`
 6. `php artisan db:seed`
+7. `php artisan storage:link`
 
 ＊ Stripeによる支払い機能を動作させるため、手順3で.envファイルにStripeの公開可能キー・シークレットキーを以下の形式で記述してください。
 ```
