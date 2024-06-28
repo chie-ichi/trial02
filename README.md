@@ -192,6 +192,45 @@ MAIL_FROM_ADDRESS=example@example.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
 
+### テスト環境構築
+1. `docker exec -it [MySqlコンテナID] bash`
+2. `mysql -u root -p`
+パスワード(docker-compose.ymlファイルのMYSQL_ROOT_PASSWORDの値)を入力してログイン
+3. `CREATE DATABASE test_laravel_db;`
+4. `SHOW DATABASES;`
+test_laravel_dbという名前のデータベースがきちんと作成されていることを確認
+5. `exit`
+を2回実行し、MySQLコンテナへの接続を終了
+6. `cp .env .env.testing`
+を実行して.envをコピーして.env.testingファイルを作成
+7. .env.testingの冒頭部分を編集
+```
+APP_ENV=local
+APP_KEY=キー
+```
+↓
+```
+APP_ENV=test
+APP_KEY=
+```
+8. .env.testingにデータベースの接続情報をテスト用に編集
+```
+DB_DATABASE=laravel_db
+DB_USERNAME=laravel_user
+DB_PASSWORD=laravel_pass
+```
+↓
+```
+DB_DATABASE=test_laravel_db
+DB_USERNAME=root
+DB_PASSWORD=root
+```
+9. `docker-compose exec php bash`
+10. `php artisan key:generate --env=testing`
+11. `php artisan config:clear`
+12. `php artisan migrate --env=testing`
+13. `php artisan db:seed --env=testing`
+
 ### テストアカウント
 テストアカウント情報は以下の通り。
 ※以下のユーザーは上記のLaravel環境構築作業の手順6を行うと生成される。
