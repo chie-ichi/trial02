@@ -77,11 +77,11 @@ http://localhost
 |------|------|------|------|------|------|
 | id | unsigned bigint | ◯ | ◯ | ◯ |  |
 | name | varchar(255) |  |  | ◯ |  |
-| area_id | unsigned unsigned bigint|  |  | ◯ | areas(id) |
+| area_id | unsigned bigint|  |  | ◯ | areas(id) |
 | category_id | unsigned bigint	|  |  | ◯ | category(id) |
 | photo | varchar(255) |  |  | ◯ |  |
 | description | text |  |  | ◯ |  |
-| owner_id | unsigned unsigned bigint|  |  |  | owner(id) |
+| owner_id | unsigned bigint|  |  |  | owner(id) |
 | created_at | timestamp |  |  |  |  |
 | updated_at | timestamp |  |  |  |  |
 
@@ -194,10 +194,10 @@ MAIL_FROM_NAME="${APP_NAME}"
 
 ### テスト環境構築
 1. `docker exec -it [MySqlコンテナID] bash`
-2. `mysql -u root -p`
+2. `mysql -u root -p`  
 パスワード(docker-compose.ymlファイルのMYSQL_ROOT_PASSWORDの値)を入力してログイン
 3. `CREATE DATABASE test_laravel_db;`
-4. `SHOW DATABASES;`
+4. `SHOW DATABASES;`  
 test_laravel_dbという名前のデータベースがきちんと作成されていることを確認
 5. `exit`
 を2回実行し、MySQLコンテナへの接続を終了
@@ -232,7 +232,7 @@ DB_PASSWORD=root
 13. `php artisan db:seed --env=testing`
 
 ### テストアカウント
-テストアカウント情報は以下の通り。
+テストアカウント情報は以下の通り。  
 ※以下のユーザーは上記のLaravel環境構築作業の手順6を行うと生成される。
 
 ### ユーザーアカウント
